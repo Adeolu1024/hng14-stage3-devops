@@ -72,7 +72,7 @@ box(8.5, 2.2, 2, 0.8, "Slack Webhook", "Alerts & Notifications", "#611f69")
 arrow(11.8, 3.05, 10.5, 2.6)
 
 # Dashboard
-box(5.5, 1.5, 5, 0.8, "Live Dashboard (Flask :8080)", "Served at monitor.yourdomain.com", "#2196f3")
+box(5.5, 1.5, 5, 0.8, "Live Dashboard (Flask :8080)", "Served at abimbola-project1.xyz", "#2196f3")
 arrow(8, 3.5, 8, 2.3)
 
 # Docker boundary

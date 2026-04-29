@@ -4,9 +4,9 @@ A real-time anomaly detection system that monitors HTTP traffic to a Nextcloud i
 
 ## Live URLs
 
-- **Server IP**: `YOUR_VPS_IP`
-- **Metrics Dashboard**: `http://monitor.yourdomain.com`
-- **Nextcloud**: `http://YOUR_VPS_IP` (IP only, as required)
+- **Server IP**: `98.89.178.68`
+- **Metrics Dashboard**: `http://abimbola-project1.xyz`
+- **Nextcloud**: `http://98.89.178.68` (IP only, as required)
 
 ## Language Choice
 
@@ -87,13 +87,13 @@ Create a Linux VPS (Ubuntu 22.04 recommended) with at least 2 vCPU and 2 GB RAM 
 
 ### 2. Point a Domain/Subdomain
 
-Create a DNS A record: `monitor.yourdomain.com` → `YOUR_VPS_IP`
+Create a DNS A record: `abimbola-project1.xyz` → `98.89.178.68`
 
 ### 3. Clone and Run Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/hng-anomaly-detector.git
-cd hng-anomaly-detector
+git clone https://github.com/Adeolu1024/hng14-stage3-devops.git
+cd hng14-stage3-devops
 chmod +x setup.sh
 sudo ./setup.sh
 ```
@@ -110,7 +110,7 @@ python generate_diagram.py
 Edit `nginx/nginx.conf` and replace `monitor.yourdomain.com` with your actual domain:
 
 ```bash
-sed -i 's/monitor.yourdomain.com/your.actual.domain/g' nginx/nginx.conf
+sed -i 's/monitor.yourdomain.com/abimbola-project1.xyz/g' nginx/nginx.conf
 docker compose down && docker compose up -d
 ```
 
@@ -172,7 +172,7 @@ README.md
 
 ## Blog Post
 
-[Read the beginner-friendly blog post here](YOUR_BLOG_POST_URL)
+[Read the beginner-friendly blog post here](https://dev.to/adeolu1024/building-a-real-time-http-anomaly-detection-engine-xxx)
 
 ## License
 
