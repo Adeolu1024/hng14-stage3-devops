@@ -47,10 +47,15 @@ class RollingBaseline:
         # Build per-second counts from the window
         if not self.second_counts:
             self.effective_mean = 0.0
-            self.effective_stddev = 0.0
+            self.effective_stddev = 0.1
             self.error_rate_mean = 0.0
             self.last_recalc = now
-            return
+            return {
+                "mean": self.effective_mean,
+                "stddev": self.effective_stddev,
+                "error_rate_mean": self.error_rate_mean,
+                "hour_slots": dict(self.hour_slots)
+            }
 
         # Group by second
         sec_map = {}
