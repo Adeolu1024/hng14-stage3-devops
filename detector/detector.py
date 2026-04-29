@@ -11,10 +11,11 @@ class AnomalyDetector:
     """
 
     def __init__(self, config):
-        self.z_threshold = config.get("detection.z_score_threshold", 3.0)
-        self.rate_multiplier = config.get("detection.rate_multiplier_threshold", 5.0)
-        self.error_multiplier = config.get("detection.error_rate_multiplier", 3.0)
-        self.window_seconds = config.get("detection.sliding_window_seconds", 60)
+        detection_cfg = config.get("detection", {})
+        self.z_threshold = detection_cfg.get("z_score_threshold", 3.0)
+        self.rate_multiplier = detection_cfg.get("rate_multiplier_threshold", 5.0)
+        self.error_multiplier = detection_cfg.get("error_rate_multiplier", 3.0)
+        self.window_seconds = detection_cfg.get("sliding_window_seconds", 60)
 
         # per-IP sliding windows: {ip: deque of timestamps}
         self.ip_windows = {}
