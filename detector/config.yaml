@@ -4,7 +4,7 @@ slack:
 
 detection:
   z_score_threshold: 3.0
-  rate_multiplier_threshold: 5.0
+  rate_multiplier_threshold: 100.0
   error_rate_multiplier: 3.0
   sliding_window_seconds: 60
   baseline_window_minutes: 30
