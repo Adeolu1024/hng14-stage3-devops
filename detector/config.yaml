@@ -1,0 +1,29 @@
+slack:
+  webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+  channel: "#security-alerts"
+
+detection:
+  z_score_threshold: 3.0
+  rate_multiplier_threshold: 5.0
+  error_rate_multiplier: 3.0
+  sliding_window_seconds: 60
+  baseline_window_minutes: 30
+  baseline_recalc_interval_seconds: 60
+
+blocking:
+  unban_schedule_minutes: [10, 30, 120]
+
+dashboard:
+  host: "0.0.0.0"
+  port: 8080
+  refresh_interval_seconds: 3
+
+logging:
+  audit_log_path: "/var/log/detector/audit.log"
+  log_level: "INFO"
+
+nginx:
+  log_path: "/var/lib/docker/volumes/HNG-nginx-logs/_data/hng-access.log"
+
+detector:
+  state_file: "/var/lib/detector/state.json"

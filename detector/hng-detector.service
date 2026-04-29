@@ -1,0 +1,22 @@
+[Unit]
+Description=HNG Anomaly Detection Engine
+After=docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/hng-anomaly-detector/detector
+ExecStart=/usr/bin/python3 /opt/hng-anomaly-detector/detector/main.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+
+# Ensure log directories exist
+ExecStartPre=/bin/mkdir -p /var/log/detector
+ExecStartPre=/bin/mkdir -p /var/lib/detector
+
+[Install]
+WantedBy=multi-user.target
