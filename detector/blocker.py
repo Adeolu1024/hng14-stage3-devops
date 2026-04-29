@@ -17,7 +17,7 @@ class IPBlocker:
             return False
 
         try:
-            cmd = ["iptables", "-A", "INPUT", "-s", ip, "-j", "DROP"]
+            cmd = ["/usr/sbin/iptables", "-A", "INPUT", "-s", ip, "-j", "DROP"]
             subprocess.run(cmd, check=True, timeout=10)
             self._blocked[ip] = {
                 "timestamp": time.time(),
@@ -38,7 +38,7 @@ class IPBlocker:
             return False
 
         try:
-            cmd = ["iptables", "-D", "INPUT", "-s", ip, "-j", "DROP"]
+            cmd = ["/usr/sbin/iptables", "-D", "INPUT", "-s", ip, "-j", "DROP"]
             subprocess.run(cmd, check=True, timeout=10)
             del self._blocked[ip]
             logger.info("Unblocked IP %s", ip)
